@@ -1,0 +1,23 @@
+{
+  "name": "todo_list",
+  "version": "1.0.0",
+  "description": "Try at making a todolist online",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fontsource/roboto": "^5.0.13",
+    "date-fns": "^3.6.0",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.6.0",
+    "style-loader": "^4.0.0",
+    "webpack-cli": "^5.1.4"
+  }
+}

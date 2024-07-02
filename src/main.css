@@ -1,0 +1,266 @@
+@import "~@fontsource/roboto/index.css";
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+}
+
+:root {
+    --primary-color: #e3d5ca;
+    --secondary-color: #d5bdaf;
+    --background-color: #edede9;
+    --hover-color: #d8d8d8;
+}
+
+header {
+    background-color: var(--background-color);
+    height: 80px;
+    border-bottom: 4px solid var(--secondary-color);
+}
+
+/* File Formatting */
+
+#container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1.3fr 5fr;
+
+}
+
+#sidebar {
+    display: flex;
+}
+
+#content-container {
+    padding: 50px;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* List Formatting */
+.list-information {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.list-name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    /* background-color: var(--secondary-color); */
+    /* padding: 20px; */
+    width: 500px;
+    text-align: center;
+    border-radius: 10px;
+    color: rgb(1, 1, 1);
+}
+
+.list-description {
+    font-size: 1.2rem;
+}
+
+
+.list-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.item-container {
+    display: grid;
+    grid-template-columns: 5fr 1fr 1fr;
+
+    width: 700px;
+    height: 20px;
+    border: 2px solid black;
+    align-items: center;
+    padding: 30px;
+
+    /* background-color: #c0c0c0; */
+    border-radius: 10px;
+}
+
+.item-container:hover {
+    width: 720px;
+    height: 22px;
+}
+
+.item-name {
+    margin-left: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.item-priority {
+    text-align: center;
+}
+
+.button-add-item {
+    position: fixed;
+    bottom: 40px; /* Distance from the bottom of the screen */
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    border-radius: 18px;
+    font-size: 1.4rem;
+}
+
+.button-add-item:hover {
+    /* background-color: var(--hover-color); */
+    font-weight: bold;
+}
+
+/* Sidebar */
+
+#sidebar {
+    padding: 10px;
+    padding-top: 30px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.all-tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.sidebar-projects {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar-projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar-option {
+    font-size: 1.2rem;
+    height: 8vh;
+    width: 34vh;
+    border: 2px black solid;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+.sidebar-option:hover {
+    /* background-color: var(--hover-color); */
+    font-weight: bold;;
+}
+
+.button-add-project {
+    width: 25px;
+    height: 25px;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    border: none;
+    background: transparent;
+}
+
+.button-add-project:hover {
+    background-color: black;
+    color: white;
+}
+
+
+/* Header */
+
+header {
+    display:flex;
+}
+.header-title {
+    align-self: center;
+    font-size: 1.7rem;
+    margin-left: 30px;
+}
+
+b {
+    font-size: 1.7rem;
+}
+
+
+/* Modal */
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    padding-top: 60px; 
+}
+
+.modal-content {
+    background-color: var(--background-color);
+    margin: 5% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 12px;
+    width: 300px; 
+}
+
+.close, .close2 {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus,
+.close2:hover,
+.close2:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 15px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+textarea {
+    resize: vertical; /* Allow vertical resize only */
+}
+
+label {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.modal-submit {
+    font-size: 1rem;
+    padding: 3px;
+    border-radius: 5px;
+}
+

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do</title>
+</head>
+<body>
+    <header>
+        <!-- <button class="button-add-item">+</button> -->
+    </header>
+    <div id="container">
+        <div id="sidebar"></div>
+        <div id="content-container"></div>
+    </div>
+
+    <div id="modal-add-project" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="modal-project-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description"></textarea>
+                </div>
+                <button class="modal-submit" type="submit">Submit</button>
+            </form>
+        </div>
+
+    </div>
+
+
+    <div id="modal-add-task" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close2">&times;</span>
+            <form id="modal-task-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name-task" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description-task" name="description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="date">Date:</label>
+                    <input type="date" id="date-task" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="project">Project:</label>
+                    <select id="projects-task" name="projects">
+                        <!-- Items will be populated by JavaScript -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="priority">Priority:</label>
+                    <select id="priority-task" name="priority" required>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+    </div>
+    
+</body>
+</html>
