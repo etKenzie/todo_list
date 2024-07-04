@@ -99,6 +99,7 @@ const displaySidebar = (user) => {
         project.addEventListener('click', () => {
             displayList(list, user);;
         })
+    
         projectList.appendChild(project);
     })
 

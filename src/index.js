@@ -1,37 +1,36 @@
 import './main.css';
-import { createTodoItem, TodoItem } from './item.js';
-// import { createTodoList, TodoList } from './list.js';
-import displayList from './displayList.js';
-import { createNewUser } from './user.js';
-import displaySidebar from './displaySidebar.js';
+import { createNewUser, recallUser } from './user.js';
 import loadUI from './loadUI.js';
+import { recallList } from './list.js';
+import { recallItem } from './item.js';
 
-const mainUser = createNewUser("Main")
-
-
-
-const test = createTodoItem("Title", "description", "2024-08-10", "low");
-const test2 = createTodoItem("Title2", "description2", "2024-10-10", "medium");
-const test3 = createTodoItem("Title3", "descripti222", "2024-10-11", "high");
-
-// mainUser.appendTask(test);
-// mainUser.appendTask(test2);
+let userJSON = localStorage.getItem('user');
+let userData = JSON.parse(userJSON);
 
 
+let user;
 
+if (userData) {
+    userData.tasks = recallList(userData.tasks);
+    if (!userData.lists) {
+        userData.lists = [];
+    } else {
+        let curList;
+        for (let i = 0; i < userData.lists.length; i++) {
+            userData.lists[i] = recallList(userData.lists[i]);
+            curList = userData.lists[i].getList();
 
+        }
+    }
+    
+    user = recallUser("Main User", userData.tasks, userData.lists);
+    
 
+} else {
+    user = createNewUser("Main User");
+}
+// user = createNewUser("Main User");
 
-// mainUser.removeTask(test);
-
-
-mainUser.createNewList("Test List", "RAJOIDJFOIDNF");
-mainUser.createNewList("Second ", "RAJOIDJFOIDNF")
-
-// mainUser.appendTask(test3, mainUser.getLists()[1])
-
-// console.log(mainUser);
-
-loadUI(mainUser);
+loadUI(user);
 
 // displaySidebar(mainUser);

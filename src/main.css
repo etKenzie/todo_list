@@ -49,8 +49,15 @@ header {
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    justify-content: center;
 }
+
 .list-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+
     font-size: 2.5rem;
     font-weight: bold;
     /* background-color: var(--secondary-color); */
@@ -75,7 +82,7 @@ header {
 
 .item-container {
     display: grid;
-    grid-template-columns: 5fr 1fr 1fr;
+    grid-template-columns: 5fr 1fr 1fr 40px 40px;
 
     width: 700px;
     height: 20px;
@@ -85,6 +92,29 @@ header {
 
     /* background-color: #c0c0c0; */
     border-radius: 10px;
+}
+
+.task-delete-button {
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+    height:30px;
+    width: 30px;
+    font-size: 1rem;
+    border-radius: 8px;
+}
+
+.list-delete-button {
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+    height:50px;
+    width: 50px;
+    border-radius: 8px;
+}
+
+.task-delete-button:hover, .list-delete-button:hover {
+    background-color: rgb(164, 164, 164);
 }
 
 .item-container:hover {
@@ -133,6 +163,7 @@ header {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    
 }
 
 .sidebar-title {
@@ -141,6 +172,7 @@ header {
     align-items: center;
     font-size: 1.3rem;
     font-weight: bold;
+    width: 34vh;
 }
 
 .sidebar-projects {
@@ -157,7 +189,7 @@ header {
 
 .sidebar-option {
     font-size: 1.2rem;
-    height: 8vh;
+    height: 45px;
     width: 34vh;
     border: 2px black solid;
     border-radius: 10px;
@@ -225,7 +257,7 @@ b {
     width: 300px; 
 }
 
-.close, .close2 {
+.close, .close2, .close3 {
     color: #aaa;
     float: right;
     font-size: 28px;
@@ -235,7 +267,9 @@ b {
 .close:hover,
 .close:focus,
 .close2:hover,
-.close2:focus {
+.close2:focus,
+.close3:hover,
+.close3:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;

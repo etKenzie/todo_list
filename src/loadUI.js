@@ -6,7 +6,10 @@ import displayHeader from "./displayHeader.js";
 const loadUI = (user) => {
     displayHeader(user);
     displaySidebar(user);
-    displayList(user.getTasks());
+    displayList(user.getTasks(), user);
+
+    localStorage.setItem('user', JSON.stringify(user));
+    console.log(localStorage.getItem('user'));
     
 
 }

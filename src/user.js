@@ -3,11 +3,20 @@ import { createTodoList } from './list';
 import { createTodoItem } from './item';
 
 class User {
-    constructor(name) {
+    constructor(name, tasks, lists) {
         this.id = uuidv4();
         this.name = name;
-        this.tasks = createTodoList("All Tasks", "");
-        this.lists = [];
+        // console.log(lists);
+
+        if (tasks == null && lists == null) {
+            // console.log('HERERERE')
+            this.tasks = createTodoList("All Tasks", "");
+            this.lists = [];
+        } else {
+            this.tasks = tasks;
+            this.lists = lists;
+        }
+        
     }
 
     getTasks() {
@@ -18,15 +27,19 @@ class User {
         return this.lists;
     }
 
+    setTasks(tasks) {
+        this.tasks = tasks;
+    }
+    
+    setLists(lists) {
+        this.lists = lists;
+    }
+
     createNewList(name, description) {
         const newList = createTodoList(name, description);
         this.lists.push(newList);
     }
 
-    // appendTask(task) {
-    //     console.log(task);
-    //     this.tasks.addTask(task);
-    // }
 
     createTask(name, description,date,list_id,priority) {
         const newTask = createTodoItem(name, description, date, priority)
@@ -58,4 +71,8 @@ const createNewUser = (title) => {
     return new User(title);
 }
 
-export { User, createNewUser };
+const recallUser = (title, tasks, lists) => {
+    return new User(title, tasks, lists);
+}
+
+export { User, createNewUser, recallUser };

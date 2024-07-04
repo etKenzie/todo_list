@@ -7,43 +7,61 @@ class TodoItem {
         this.id = uuidv4();
         this.title = title;
         this.description = description;
-        this.dueDate = this.formatDate(dueDate);
+
         this.priority = priority;
         this.completed = false;
-    }
 
-    formatDate(dueDate) {
         if (dueDate) {
             const dateObject = parse(dueDate, "yyyy-MM-dd", new Date());
             if (isValid(dateObject)) {
-                return format(dateObject, 'MM/dd/yyyy');
+                this.dueDate = format(dateObject, 'MM/dd/yyyy');
             }
         }
-        return "";
+
     }
+
+    // formatDate(dueDate) {
+    //     if (dueDate) {
+    //         const dateObject = parse(dueDate, "yyyy-MM-dd", new Date());
+    //         if (isValid(dateObject)) {
+    //             return format(dateObject, 'MM/dd/yyyy');
+    //         }
+    //     }
+    //     return "";
+    // }
+
+    // cancelFormatDate(dueDate) {
+    //     if (dueDate) {
+    //         const dateObject = parse(dueDate, "MM/dd/yyyy", new Date());
+    //         if (isValid(dateObject)) {
+    //             return format(dateObject, 'yyyy-MM-dd');
+    //         }
+    //     }
+    //     return "";
+    // }
 
     // getId() { return this.id; }
 
 
-    updateDueDate(newDate) {
-        this.dueDate = this.formatDate(newDate);
-    }
+    // updateDueDate(newDate) {
+    //     this.dueDate = this.formatDate(newDate);
+    // }
 
-    updateTitle(title) {
-        this.title = title;
-    }
+    // updateTitle(title) {
+    //     this.title = title;
+    // }
 
-    updateDescription(description) {
-        this.description = description;
-    }
+    // updateDescription(description) {
+    //     this.description = description;
+    // }
 
-    updatePriority(priority) {
-        this.priority = priority;
-    }
+    // updatePriority(priority) {
+    //     this.priority = priority;
+    // }
 
-    toggleCompletion() {
-        this.completed =!this.completed;
-    }
+    // toggleCompletion() {
+    //     this.completed =!this.completed;
+    // }
 
 
 }
@@ -51,5 +69,6 @@ class TodoItem {
 const createTodoItem = (title,description,dueDate,priority) => {
     return new TodoItem(title, description, dueDate, priority);
 }
+
 
 export { createTodoItem, TodoItem };

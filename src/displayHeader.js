@@ -3,9 +3,12 @@ import loadUI from "./loadUI";
 
 const displayHeader = (user) => {
     const header = document.getElementsByTagName("header")[0]
+    header.innerHTML = "";
     const addTask = document.createElement('button');
     addTask.className = 'button-add-item';
     addTask.textContent = '+';
+
+
 
     // MODAL SECTION
     
@@ -14,10 +17,12 @@ const displayHeader = (user) => {
 
     var projectSelect = document.getElementById("projects-task")
     var option = document.createElement('option');
+    projectSelect.innerHTML = '';
     option.value = '';
     option.text = 'Select a project';
     projectSelect.appendChild(option);
-
+    
+    
     user.getLists().forEach(list => {
         var option = document.createElement('option');
         option.value = list.id;
@@ -57,12 +62,6 @@ const displayHeader = (user) => {
         var date = document.getElementById("date-task").value;
         var selectedItem = document.getElementById("projects-task").value;
         var priority = document.getElementById("priority-task").value;
-
-        // console.log("Name: " + name);
-        // console.log("Description: " + description);
-        // console.log("Date: " + date);
-        // console.log("Selected Item: " + selectedItem);
-        // console.log("Priority: " + priority);
 
         // You can add your own logic here to handle the form data
 
